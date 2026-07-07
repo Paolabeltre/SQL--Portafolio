@@ -6,21 +6,21 @@ WHERE, ORDER BY, LIMIT, alias y operadores.
 */
 
 /*
-Consulta 1: Mostrar todos los registros de una tabla.
+Consulta 1: Mostrar todos los registros de una tabla, el * seleciona toda la tabla.
 Objetivo: Practicar el uso básico de SELECT.
 */
 SELECT *
 FROM empleados;
 
 /*
-Consulta 2: Mostrar columnas específicas.
+Consulta 2: Mostrar columnas específicas. Aqui no utilizamos el * ya que estamos buscando columnas en especifico.
 Objetivo: Seleccionar solamente los campos necesarios.
 */
 SELECT nombre, apellido, puesto
 FROM empleados;
 
 /*
-Consulta 3: Filtrar registros con WHERE.
+Consulta 3: Filtrar registros con WHERE. 
 Objetivo: Obtener empleados pertenecientes a un departamento específico.
 */
 SELECT nombre, apellido, departamento
@@ -28,7 +28,7 @@ FROM empleados
 WHERE departamento = 'Tecnología';
 
 /*
-Consulta 4: Ordenar resultados.
+Consulta 4: Ordenar resultados. El order by te dice el orden que tu quieres que aparescan los resultaods.
 Objetivo: Mostrar empleados ordenados alfabéticamente por apellido.
 */
 SELECT nombre, apellido, puesto
