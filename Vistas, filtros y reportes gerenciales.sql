@@ -24,7 +24,6 @@ WHERE cat.nombre_categoria IN ('Barbería', 'Peluquería', 'Estética', 'Cuidado
 GROUP BY s.nombre_servicio, cat.nombre_categoria
 ORDER BY ingresos_totales DESC;
 GO
-
 -- =====================================================================
 -- VISTA 2: vw_ClientesActivos
 -- Objetivo gerencial: tener un listado limpio de clientes con citas
@@ -42,11 +41,6 @@ INNER JOIN Citas c ON cl.id_cliente = c.id_cliente
 WHERE c.estado <> 'Cancelada'
   AND (cl.correo LIKE '%@gmail.com' OR cl.correo LIKE '%@hotmail.com' OR cl.correo LIKE '%@outlook.com');
 GO
-
-
-SELECT * FROM vw_ClientesActivos
-ORDER BY cliente;
-
 -- =====================================================================
 -- VISTA 3: vw_ProductividadEmpleados
 -- Objetivo gerencial: medir cuántas citas atendió cada empleado y
@@ -69,10 +63,10 @@ WHERE c.fecha BETWEEN '2026-01-01' AND '2026-12-31'
 GROUP BY e.id_empleado, e.nombre, e.apellido, e.especialidad
 ORDER BY ingresos_generados DESC;
 GO
-
 -- =====================================================================
 -- EJECUCIÓN DE LAS VISTAS (para ver los resultados)
 -- =====================================================================
 SELECT * FROM vw_ServiciosMasRentables;
-SELECT * FROM vw_ClientesActivos;
+SELECT * FROM vw_ClientesActivos
+ORDER BY cliente;
 SELECT * FROM vw_ProductividadEmpleados;
